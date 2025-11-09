@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Planos — Sistema de Controle Financeiro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container inner">
+      <div class="brand">
+        <img class="logo" src="./logo.png" alt="Hiden Systems" onerror="this.style.display='none'" />
+      </div>
+      <nav class="nav">
+        <a href="./index.html">Início</a>
+        <a href="./planos.html">Planos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Escolha seu plano</h1>
+      <p>Comece grátis com recursos essenciais, e atualize para a versão Premium quando quiser desbloquear automações, parcelamentos avançados e relatórios completos.</p>
+    </section>
+
+    <section class="section">
+      <div class="plan-grid">
+        <!-- Plano Gratuito Destacado -->
+        <article class="card featured" aria-label="Plano Gratuito">
+          <div class="title">
+            <h3>Plano Gratuito</h3>
+            <span class="badge">Destaque</span>
+          </div>
+          <p class="muted">Ideal para começar e testar os principais recursos.</p>
+          <div class="price free">GRÁTIS</div>
+          <ul class="features">
+            <li>Cadastro de receitas e despesas</li>
+            <li>Categorias básicas</li>
+            <li>Relatórios simples</li>
+            <li>Backup local</li>
+          </ul>
+          <button id="freePlanBtn" class="btn pulse" aria-label="Começar grátis" data-destination_page="./success.html">Começar grátis</button>
+          <p class="muted" style="margin-top:10px">Ao clicar, você será redirecionado automaticamente para a página definida por <code>destination_page</code>.</p>
+        </article>
+
+        <!-- Plano Premium -->
+        <article class="card" aria-label="Plano Premium">
+          <div class="title">
+            <h3>Versão Premium</h3>
+          </div>
+          <p class="muted">Para quem deseja automação, parcelamentos e relatórios avançados.</p>
+          <div class="price">R$ 39,90</div>
+          <ul class="features">
+            <li>Parcelamento automático</li>
+            <li>Gráficos e filtros avançados</li>
+            <li>Metas financeiras e análise mensal</li>
+            <li>Suporte prioritário</li>
+          </ul>
+          <button id="premiumBuyBtn" class="btn" aria-label="Comprar Premium">Comprar Premium</button>
+          <p class="muted" style="margin-top:10px">Pagamento via Mercado Pago — liberação automática da licença.</p>
+        </article>
+
+        <!-- Versão Empresarial (Personalizada) -->
+        <article class="card" aria-label="Versão Empresarial (Personalizada)">
+          <div class="title">
+            <h3>Versão Empresarial (Personalizada)</h3>
+            <span class="badge">Personalizado</span>
+          </div>
+          <p class="muted">Layout com nome, logo e cores da empresa + suporte e atualizações</p>
+          <div class="price">R$ 149,90</div>
+          <ul class="features">
+            <li>Layout com identidade visual da empresa</li>
+            <li>Logo e cores personalizadas</li>
+            <li>Suporte e atualizações</li>
+          </ul>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px">
+            <a class="btn btn-outline" href="mailto:comercial@hidensystems.com" aria-label="Fale conosco">Fale conosco</a>
+            <button id="businessBuyBtn" class="btn" aria-label="Comprar Empresarial">Comprar Empresarial</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h3>Dúvidas</h3>
+        <p class="muted">Você pode começar no gratuito e migrar para o Premium quando quiser. Seu histórico é preservado. Se precisar de ajuda, fale com nosso suporte.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© Hiden Systems — Melhor controle financeiro, do básico ao avançado.</div>
+  </footer>
+
+  <script src="./app.js" defer></script>
+</body>
+<!-- Para redirecionar o plano gratuito, chame /planos.html?destination_page=/success.html -->
+</html>

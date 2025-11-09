@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pagamento Aprovado — Hiden Systems</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container inner">
+      <div class="brand">
+        <img class="logo" src="./logo.png" alt="Hiden Systems" onerror="this.style.display='none'" />
+      </div>
+      <nav class="nav">
+        <a href="./index.html">Início</a>
+        <a href="./planos.html">Planos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <article class="card" aria-label="Pagamento aprovado">
+        <h1>Pagamento aprovado</h1>
+        <p class="muted">Seu pagamento foi confirmado pelo provedor. Em instantes você receberá no e-mail informado as instruções de acesso e sua licença.</p>
+
+        <div class="section" style="margin-top:8px">
+          <h3 style="margin:0 0 8px">Resumo do pedido</h3>
+          <ul style="list-style:none; padding:0; margin:0">
+            <li><strong>Plano:</strong> <span id="orderPlan">—</span></li>
+            <li><strong>Valor:</strong> <span id="orderAmount">—</span></li>
+            <li><strong>Identificador:</strong> <span id="orderId">—</span></li>
+          </ul>
+          <p class="muted" style="margin-top:8px">Se não localizar nosso e-mail, verifique a caixa de spam ou promoções e marque como confiável.</p>
+        </div>
+
+        <div class="section" style="margin-top:8px">
+          <h3 style="margin:0 0 8px">Próximos passos</h3>
+          <ul class="list-check">
+            <li>Receba a licença e instruções por e-mail (Premium/Empresarial).</li>
+            <li>Ative seu acesso no aplicativo ou painel conforme o plano.</li>
+            <li>Em caso de dúvidas, fale com nosso suporte.</li>
+          </ul>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+          <button id="goBtn" class="btn" aria-label="Ir para a página de destino">Ir para a próxima página</button>
+          <button id="downloadBtn" class="btn" aria-label="Baixar aplicativo" style="display:none">Baixar aplicativo</button>
+          <a class="btn btn-outline" href="./index.html" aria-label="Voltar à página inicial">Início</a>
+          <a class="btn btn-outline" href="mailto:suporte@hidensystems.com" aria-label="Contato de suporte">Suporte</a>
+          <a class="btn btn-outline" href="./planos.html" aria-label="Ver planos">Ver Planos</a>
+        </div>
+
+        <p class="muted" style="margin-top:8px">Você será redirecionado automaticamente em alguns segundos. Se preferir, use o botão acima para seguir imediatamente.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© Hiden Systems</div>
+  </footer>
+  <script src="./app.js"></script>
+  <script>
+    (function(){
+      try {
+        // Redirecionamento com pequeno atraso; cancelável pelo usuário clicando no botão
+        var params = new URLSearchParams(window.location.search);
+        var auto = params.get('auto_redirect');
+        var dest;
+        if (typeof getDestinationPage === 'function') {
+          dest = getDestinationPage();
+        } else {
+          // Fallback simples
+          var candidate = (params.get('destination_page') || '').trim();
+          var fallback = './index.html';
+          if (!candidate) dest = fallback;
+          else if (candidate.startsWith('/')) dest = candidate;
+          else {
+            try {
+              var url = new URL(candidate, window.location.origin);
+              dest = url.origin === window.location.origin ? (url.pathname + url.search + url.hash) : fallback;
+            } catch(_) { dest = fallback; }
+          }
+        }
+
+        var goBtn = document.getElementById('goBtn');
+        if (goBtn && dest) {
+          goBtn.addEventListener('click', function(){ window.location.replace(dest); });
+        }
+
+        if (auto !== '0' && dest) {
+          setTimeout(function(){ window.location.replace(dest); }, 4000);
+        }
+      } catch(_){}
+    })();
+  </script>
+</body>
+</html>

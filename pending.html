@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pagamento Pendente — Hiden Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container inner">
+      <div class="brand">
+        <img class="logo" src="./logo.png" alt="Hiden Systems" onerror="this.style.display='none'" />
+      </div>
+      <nav class="nav">
+        <a href="./index.html">Início</a>
+        <a href="./planos.html">Planos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <article class="card" aria-label="Status do pagamento">
+        <h1>Pagamento Pendente</h1>
+        <p class="muted">Recebemos sua solicitação e o provedor de pagamento ainda está processando. Isso normalmente leva poucos minutos. Assim que for aprovado, você receberá a liberação automaticamente.</p>
+
+        <div class="section" style="margin-top:8px">
+          <h3 style="margin:0 0 8px">O que acontece agora</h3>
+          <ul class="list-check">
+            <li>Validação automática do pagamento pelo provedor (PIX, cartão ou boleto).</li>
+            <li>Atualização do status aqui na página quando confirmada.</li>
+            <li>Envio de e-mail com acesso e instruções (versão Premium).</li>
+          </ul>
+        </div>
+
+        <div class="section" style="margin-top:8px">
+          <h3 style="margin:0 0 8px">Resumo do pedido</h3>
+          <ul style="list-style:none; padding:0; margin:0">
+            <li><strong>Plano:</strong> <span id="orderPlan">Premium</span></li>
+            <li><strong>Valor:</strong> <span id="orderAmount">R$ 99,90</span></li>
+            <li><strong>Identificador:</strong> <span id="orderId">—</span></li>
+          </ul>
+          <p class="note" style="margin-top:8px">Se você tiver realizado o pagamento por boleto, a confirmação pode levar até 2 dias úteis.</p>
+        </div>
+
+        <div class="section" style="margin-top:8px">
+          <h3 style="margin:0 0 8px">Precisa de ajuda?</h3>
+          <p class="muted">Se o status não mudar após alguns minutos, você pode atualizar ou falar com nosso suporte. Estamos à disposição para ajudar.</p>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+          <button class="btn" onclick="location.reload()" aria-label="Atualizar status do pagamento">Atualizar status</button>
+          <a class="btn btn-outline" href="./index.html" aria-label="Voltar à página inicial">Voltar</a>
+          <a class="btn btn-outline" href="mailto:suporte@hidensystems.com" aria-label="Contato de suporte">Contato do suporte</a>
+          <a class="btn btn-outline" href="./planos.html" aria-label="Ver planos">Ver Planos</a>
+        </div>
+
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© Hiden Systems</div>
+  </footer>
+  <script src="./app.js"></script>
+</body>
+</html>

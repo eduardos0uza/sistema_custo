@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hiden Systems — Sistema de Controle Financeiro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container inner">
+      <div class="brand">
+        <img class="logo" src="./logo.png" alt="Hiden Systems" onerror="this.style.display='none'" />
+      </div>
+      <nav class="nav">
+        <a href="./index.html">Início</a>
+        <a href="./planos.html">Planos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero hero-split">
+      <div class="hero-copy">
+        <span class="kicker">💰 Sistema de Controle Financeiro – Hiden Systems</span>
+        <h1>Organize suas finanças de forma simples, bonita e inteligente</h1>
+        <p>Tenha controle total de receitas, despesas, metas e saldo mensal em um painel moderno, interativo e responsivo. Ideal para uso pessoal, pequenas empresas, freelancers e MEIs.</p>
+        <div class="hero-card">Versão Premium inclui metas, parcelamentos automáticos e categorias avançadas.</div>
+        <div class="cta">
+          <a class="btn" href="/planos.html">Ver Planos</a>
+          <button id="buyBtn" class="btn">Comprar Premium</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img class="photo" src="./hero.jpg" alt="Interface do Sistema de Controle Financeiro da Hiden Systems em uso" onerror="this.src='./hero-illustration.svg'" />
+        <span class="chip balance"><span class="dot"></span> <span class="label">Saldo mensal</span> <span class="value" data-value="542.77">R$ 542,77</span></span>
+        <span class="chip income"><span class="dot" style="background:#22c55e"></span> <span class="label">Receitas</span> <span class="value" data-value="2744.89">R$ 2.744,89</span></span>
+        <span class="chip expense"><span class="dot" style="background:#f59e0b"></span> <span class="label">Despesas</span> <span class="value" data-value="2202.12">R$ 2.202,12</span></span>
+        <p class="muted hero-caption">Painel demonstrativo com gráficos, receitas, despesas e saldo.</p>
+      </div>
+    </section>
+
+    <!-- Recursos Principais -->
+    <section class="section">
+      <div class="card">
+        <h3>⚙️ Recursos Principais</h3>
+        <ul class="list-check">
+          <li>Controle completo de receitas e despesas</li>
+          <li>Parcelamento automático de compras (ex: 12x)</li>
+          <li>Gráficos por categoria (alimentação, moradia, lazer, etc.)</li>
+          <li>Controle de metas financeiras com progresso e alertas</li>
+          <li>Filtro por mês e tipo (receitas, despesas ou todas)</li>
+          <li>Interface moderna com design responsivo</li>
+          <li>Armazenamento local (funciona 100% offline)</li>
+          <li>Edição e exclusão de transações e metas</li>
+          <li>100% em HTML, CSS e JavaScript (sem dependências externas)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Planos Disponíveis -->
+    <section class="section">
+      <h2 style="margin-bottom:16px">🚀 Planos Disponíveis</h2>
+      <div class="plans-table">
+        <article class="plan-item">
+          <div class="plan-name">
+            <h3>Versão Gratuita</h3>
+            <span class="plan-price free">GRÁTIS</span>
+          </div>
+          <p class="muted">Controle básico de receitas e despesas</p>
+          <div class="cta" style="margin-top:10px">
+            <a class="btn btn-outline" href="/planos.html">Começar grátis</a>
+          </div>
+        </article>
+        <article class="plan-item">
+          <div class="plan-name">
+            <h3>Versão Premium</h3>
+            <span class="plan-price">R$ 39,90</span>
+          </div>
+          <p class="muted">Todas as funções + metas, parcelamentos e categorias automáticas</p>
+          <div class="cta" style="margin-top:10px">
+            <button id="buyBtn" class="btn">Comprar Premium</button>
+          </div>
+          <p class="note" style="margin-top:10px">Pagamento via Mercado Pago — liberação automática após confirmação.</p>
+        </article>
+        <article class="plan-item">
+          <div class="plan-name">
+            <h3>Versão Empresarial (Personalizada)</h3>
+            <span class="plan-price">R$ 149,90</span>
+          </div>
+          <p class="muted">Layout com nome, logo e cores da empresa + suporte e atualizações</p>
+          <div class="cta" style="margin-top:10px">
+            <a class="btn btn-outline" href="mailto:comercial@hidensystems.com">Fale conosco</a>
+            <button id="empresarialBuyBtn" class="btn" style="margin-left:10px">Comprar Empresarial</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Hospedagem -->
+    <section class="section">
+      <div class="card">
+        <h3>💡 Hospedagem e uso</h3>
+        <p>Você pode hospedar em qualquer lugar (Netlify, GitHub Pages, etc.) e usar em navegador ou como PWA no celular.</p>
+      </div>
+    </section>
+
+    
+
+    <!-- Metas (dinâmico via data-attributes) -->
+    <section class="section">
+      <div class="card">
+        <h3>🎯 Minhas Metas (dinâmico)</h3>
+        <div style="display:grid; gap:14px; margin-top:10px">
+          <div data-goal
+               data-name="Civic G10"
+               data-type="Veículo"
+               data-current="R$ 80.000,00"
+               data-target="R$ 120.000,00"
+               data-deadline="2026-06-14"
+               class="card" style="padding:12px;"></div>
+
+          <div data-goal
+               data-name="Notebook Trabalho"
+               data-type="Tecnologia"
+               data-current="R$ 1.500,00"
+               data-target="R$ 3.000,00"
+               data-deadline="2025-12-31"
+               class="card" style="padding:12px;"></div>
+
+          <div data-goal
+               data-name="Viagem"
+               data-type="Lazer"
+               data-current="R$ 2.500,00"
+               data-target="R$ 5.000,00"
+               data-deadline="2026-06-15"
+               class="card" style="padding:12px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Público alvo -->
+    <section class="section">
+      <div class="card">
+        <h3>🧠 Ideal para</h3>
+        <ul class="list-check">
+          <li>Usuários que desejam organizar gastos pessoais</li>
+          <li>Freelas e pequenos empresários que querem um controle simples e eficaz</li>
+          <li>Quem não quer depender de apps pagos e deseja controle total dos dados</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Licenciamento e Entrega -->
+    <section class="section">
+      <div class="card">
+        <h3>🔒 Licenciamento e Entrega</h3>
+        <p>Após o pagamento, você recebe:</p>
+        <ul class="list-check">
+          <li>🗂️ Arquivos completos do sistema (HTML, CSS, JS)</li>
+          <li>📘 Manual de instalação e personalização</li>
+          <li>🔑 Chave de licença (para versão Premium)</li>
+          <li>🚀 Acesso imediato via link ou e-mail automático</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Pagamento -->
+    <section class="section">
+      <div class="card">
+        <h3>💸 Formas de Pagamento</h3>
+        <p>PIX, Cartão de Crédito ou Boleto via Mercado Pago — ✔️ Liberação automática após confirmação.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© Hiden Systems — Controle financeiro moderno e acessível.</div>
+  </footer>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
